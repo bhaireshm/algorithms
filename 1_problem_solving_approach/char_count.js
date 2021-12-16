@@ -1,4 +1,4 @@
-require("../app").titleLog("Character count");
+require("../helper").titleLog("Character count");
 
 function charCount(str) {
   // create an object

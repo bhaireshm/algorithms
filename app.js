@@ -1,7 +1,3 @@
-exports.titleLog = function (...a) {
-  console.log(...a, "!!!\n");
-};
-
 const { exec } = require("child_process");
 const fs = require("fs");
 const path = require("path");
@@ -10,7 +6,6 @@ const optimist = require("optimist");
 
 const folders = removeHiddenFolders(fs.readdirSync(__dirname));
 const folderStructure = {};
-// console.log(folders);
 
 // * Read arguments
 prompt.override = optimist.argv;
