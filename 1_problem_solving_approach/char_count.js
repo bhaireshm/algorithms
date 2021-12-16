@@ -1,3 +1,5 @@
+require("../app").titleLog("Character count");
+
 function charCount(str) {
   // create an object
   var result = {};
