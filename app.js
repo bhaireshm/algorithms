@@ -43,6 +43,7 @@ if (Object(prompt.override).hasOwnProperty("fileNumber")) {
 prompt.get(["fileNumber"], function (err, result) {
   if (err) console.error(err);
 
+  console.log("Input:", result);
   const fileFullPath = getFile(result.fileNumber);
 
   exec(`node ${fileFullPath}`)
@@ -70,7 +71,15 @@ function getPath(fp) {
 function getFile(fileNumber) {
   const indexes = String(fileNumber).split(".");
   const folderName = Object.keys(folderStructure)[indexes[0] - 1];
+  if (!folderName) {
+    helper.error("Folder not found!!");
+    process.exit(1);
+  }
   const fileName = Object.values(folderStructure)[indexes[0] - 1][indexes[1] - 1];
+  if (!fileName) {
+    helper.error("File not found!!");
+    process.exit(1);
+  }
   const actualFileName = fileName.replace(`${fileNumber}_`, "");
   const fileFullPath = getPath(path.join(folderName, actualFileName));
 
