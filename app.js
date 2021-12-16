@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const prompt = require("prompt");
 const optimist = require("optimist");
+const helper = require("./helper");
 
 const folders = removeHiddenFolders(fs.readdirSync(__dirname));
 const folderStructure = {};
@@ -41,8 +42,17 @@ if (Object(prompt.override).hasOwnProperty("fileNumber")) {
 
 prompt.get(["fileNumber"], function (err, result) {
   if (err) console.error(err);
-  // console.log("\n");
-  getFile(result.fileNumber);
+
+  const fileFullPath = getFile(result.fileNumber);
+
+  exec(`node ${fileFullPath}`)
+    .stdout.on("data", (data) => {
+      console.log(data);
+      // console.log("Execution complete.");
+    })
+    .on("end", () => {
+      process.exit(0);
+    });
 });
 
 // * ------------------------------------------------------------------------- * //
@@ -65,16 +75,7 @@ function getFile(fileNumber) {
   const fileFullPath = getPath(path.join(folderName, actualFileName));
 
   console.log("\nExecuting file ", fileFullPath);
-  require("./helper").titleLog(actualFileName.replace(".js", "").replace(/_/g, " ").toUpperCase());
-
-  exec(`node ${fileFullPath}`)
-    .stdout.on("data", (data) => {
-      console.log(data);
-      // console.log("Execution complete.");
-    })
-    .on("end", () => {
-      process.exit(0);
-    });
+  helper.titleLog(actualFileName.replace(".js", "").replace(/_/g, " ").toUpperCase());
 
   return fileFullPath;
 }
