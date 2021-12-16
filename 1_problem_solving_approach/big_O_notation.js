@@ -1,5 +1,3 @@
-console.log("Big O Notation!!!\n");
-
 // * Using Math formula
 function addUpTo(n) {
   return (n * (n + 1)) / 2;

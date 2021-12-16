@@ -8,8 +8,6 @@
  * @example same([1,2,1], [4,4,1]) // false (must be same frequency)
  */
 
-require("../helper").titleLog("Frequency Counter");
-
 // * O(n2)
 // arr1 * arr2 times loops
 function same(arr1, arr2) {

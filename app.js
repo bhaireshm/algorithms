@@ -45,8 +45,6 @@ prompt.get(["fileNumber"], function (err, result) {
   getFile(result.fileNumber);
 });
 
-prompt.stop();
-
 // * ------------------------------------------------------------------------- * //
 // * Private functions
 function removeHiddenFolders(folders) {
@@ -63,10 +61,13 @@ function getFile(fileNumber) {
   const indexes = String(fileNumber).split(".");
   const folderName = Object.keys(folderStructure)[indexes[0] - 1];
   const fileName = Object.values(folderStructure)[indexes[0] - 1][indexes[1] - 1];
-  const fileFullPath = getPath(path.join(folderName, fileName.replace(`${fileNumber}_`, "")));
+  const actualFileName = fileName.replace(`${fileNumber}_`, "");
+  const fileFullPath = getPath(path.join(folderName, actualFileName));
 
-  console.log("Executing file ", fileFullPath);
-  exec(`cd ${getPath(folderName)} && node ${fileName.replace(`${fileNumber}_`, "")}`)
+  console.log("\nExecuting file ", fileFullPath);
+  require("./helper").titleLog(actualFileName.replace(".js", "").replace(/_/g, " ").toUpperCase());
+
+  exec(`node ${fileFullPath}`)
     .stdout.on("data", (data) => {
       console.log(data);
       // console.log("Execution complete.");
