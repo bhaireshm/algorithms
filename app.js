@@ -46,14 +46,12 @@ prompt.get(["fileNumber"], function (err, result) {
   console.log("Input:", result);
   const fileFullPath = getFile(result.fileNumber);
 
-  exec(`node ${fileFullPath}`)
-    .stdout.on("data", (data) => {
-      console.log(data);
-      // console.log("Execution complete.");
-    })
-    .on("end", () => {
-      process.exit(0);
-    });
+  exec(`node ${fileFullPath}`, function (err, stdout, stderr) {
+    if (err) console.error(err);
+    if (stderr) console.error(stderr);
+    if (stdout) console.log(stdout);
+    process.exit(0);
+  });
 });
 
 // * ------------------------------------------------------------------------- * //

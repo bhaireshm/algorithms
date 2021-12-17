@@ -3,5 +3,5 @@ exports.titleLog = function (...a) {
 };
 
 exports.error = function (...a) {
-  console.log("ERROR:", ...a, "!!!");
+  console.error("ERROR:", ...a);
 };
