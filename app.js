@@ -16,7 +16,8 @@ for (let i = 0; i < folders.length; i++) {
   if (fs.lstatSync(getPath(folder)).isDirectory()) {
     folderStructure[folder] = [];
     fs.readdirSync(getPath(folder)).forEach((file, j) => {
-      const fileName = `${i + 1}.${j + 1}_${file}`;
+      // const fileName = `${i + 1}.${j + 1}_${file}`;
+      const fileName = `${file}`;
       folderStructure[folder].push(fileName);
     });
   }
@@ -71,7 +72,7 @@ function getFile(fileNumber) {
     return false;
   }
   const actualFileName = fileName.replace(`${fileNumber}_`, "");
-  const fileFullPath = getPath(path.join(folderName, actualFileName));
+  const fileFullPath = getPath(path.join(folderName, fileName));
 
   console.log("\nExecuting file ", fileFullPath);
   helper.titleLog(actualFileName.replace(".js", "").replace(/_/g, " ").toUpperCase() + " !!!");
