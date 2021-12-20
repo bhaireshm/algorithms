@@ -4,6 +4,7 @@ const path = require("path");
 const prompt = require("prompt");
 const optimist = require("optimist");
 const helper = require("./helper");
+require("./global_methods");
 
 const folders = removeHiddenFolders(fs.readdirSync(__dirname));
 const folderStructure = {};
@@ -87,7 +88,7 @@ function startPrompt() {
   prompt.get(["fileNumber"], function (err, result) {
     if (err) console.error(err);
     console.log("Input:", result);
-    const fileNumber = result.fileNumber;
+    const fileNumber = String(result.fileNumber);
 
     if (["0", "zero"].some((r) => r == fileNumber.toLowerCase())) {
       helper.warn("Program exited !!!");
@@ -114,6 +115,10 @@ function startPrompt() {
         if (stderr) console.error(stderr);
         if (stdout) console.log(stdout);
         console.log("-".repeat(50));
+
+        // * Clear arguments to stop loop call
+        prompt.override = null;
+
         startPrompt();
         return;
       });
