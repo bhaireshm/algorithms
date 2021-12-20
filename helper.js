@@ -24,3 +24,27 @@ exports.error = function (...a) {
   a.reverse();
   console.error(LCERROR, a.join(" "), "\n");
 };
+
+exports.timeComplexity = function (type, ...a) {
+  let msg = "Time complexity - ";
+  switch (type) {
+    case "1":
+      msg += "O(1)";
+      break;
+    case "n":
+      msg += "O(n)";
+      break;
+    case "n2":
+      msg += "O(n2)";
+      break;
+    case "logn":
+      msg += "O(log n)";
+      break;
+    case "nlogn":
+      msg += "O(n log n)";
+      break;
+    default:
+      break;
+  }
+  console.log(LCINFO, msg, ...a);
+};
