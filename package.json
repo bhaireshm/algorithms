@@ -1,0 +1,24 @@
+{
+  "name": "@bhaireshm/algorithms",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest ./src/tests/*",
+    "build": "rm -rf dist && tsc --build"
+  },
+  "keywords": [
+    "algorithms"
+  ],
+  "files": [
+    "dist"
+  ],
+  "author": "Bhairesh M <bhairesh@arithaconsulting.com>",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.4",
+    "typescript": "^5.5.4"
+  }
+}
