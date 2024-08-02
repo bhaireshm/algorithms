@@ -10,7 +10,7 @@ npm install @bhaireshm/algorithms
 
 ### Documentation
 
-- [Documentation](https://bhaireshm.github.io/algorithms/)
+- [Documentation](https://bhaireshm.github.io/algorithms/modules.html)
 
 ### Algorithms
 
