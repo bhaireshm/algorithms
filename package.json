@@ -4,10 +4,10 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "test": "jest ./src/tests/*",
+    "test": "jest",
     "build": "rm -rf dist && tsc -p tsconfig.json",
     "watch": "rm -rf dist && tsc --watch",
-    "prepublishOnly": "pnpm build"
+    "prepublishOnly": "pnpm build && pnpm test"
   },
   "keywords": [
     "algorithms"

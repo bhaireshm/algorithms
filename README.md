@@ -1,4 +1,4 @@
-# Doubly Linked List in TypeScript
+# Algorithms
 
 This repository provides a TypeScript implementation of a doubly linked list data structure.
 
@@ -12,6 +12,6 @@ npm install @bhaireshm/algorithms
 
 - [Documentation](https://bhaireshm.github.io/algorithms/modules.html)
 
-### Algorithms
+### Data Structures
 
 - [DoublyLinkedList](https://bhaireshm.github.io/algorithms/classes/DoublyLinkedList.html)

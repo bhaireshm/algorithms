@@ -8,7 +8,7 @@
     "esModuleInterop": true,
     "removeComments": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["./src/types/", "node"]
+    "types": ["./src/types/", "node", "jest"]
   },
   "include": ["./index.ts", "./package.json"],
   "exclude": ["node_modules", "dist", "./src/tests/*"]
