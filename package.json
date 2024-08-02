@@ -1,10 +1,11 @@
 {
   "name": "@bhaireshm/algorithms",
   "version": "1.0.0",
+  "description": "",
   "main": "dist/index.js",
   "scripts": {
     "test": "jest ./src/tests/*",
-    "build": "rm -rf dist && tsc --build",
+    "build": "rm -rf dist && tsc -p tsconfig.json",
     "watch": "rm -rf dist && tsc --watch",
     "prepublishOnly": "pnpm build"
   },
@@ -16,7 +17,14 @@
   ],
   "author": "Bhairesh M <bhairesh@arithaconsulting.com>",
   "license": "ISC",
-  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhaireshm/algorithms.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bhaireshm/algorithms/issues"
+  },
+  "homepage": "https://bhaireshm.github.io/algorithms/modules.html",
   "devDependencies": {
     "@types/jest": "^29.5.12",
     "@types/node": "^22.0.3",

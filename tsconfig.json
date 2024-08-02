@@ -1,24 +1,14 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "strict": true,
-    "declaration": true,
-    "baseUrl": "./",
-    "forceConsistentCasingInFileNames": true,
-    "incremental": true,
-    "module": "CommonJS",
-    "target": "es6",
-    "sourceMap": false,
-    "allowJs": true,
-    "checkJs": true,
     "outDir": "dist",
-    "moduleResolution": "Node",
-    "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "Bundler",
+    "target": "ES2015",
+    "module": "ES2020",
+    "strict": true,
     "esModuleInterop": true,
-    "strictNullChecks": true,
-    "skipLibCheck": true,
-    "types": ["./src/types/", "node", "jest"]
+    "removeComments": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": ["./src/types/", "node"]
   },
   "include": ["./index.ts", "./package.json"],
   "exclude": ["node_modules", "dist", "./src/tests/*"]
