@@ -1,0 +1,9 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "githubPages": true,
+  "name": "@bhaireshm/algorithms",
+  "out": "docs",
+  "sort": ["alphabetical"],
+  "tsconfig": "./tsconfig.json",
+  "entryPoints": ["./src/index.ts"]
+}
