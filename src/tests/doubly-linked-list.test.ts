@@ -1,4 +1,4 @@
-import { DoublyLinkedList } from '../data-structures';
+import { DoublyLinkedList } from "../data-structures";
 
 describe('DoublyLinkedList', () => {
   let list: DoublyLinkedList;

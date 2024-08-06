@@ -6,9 +6,10 @@
     "module": "ES2020",
     "strict": true,
     "esModuleInterop": true,
-    "removeComments": true,
+    "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["./src/types/", "node", "jest"]
+    "types": ["./src/types/", "node", "jest"],
+    "declaration": true
   },
   "include": ["./index.ts", "./package.json"],
   "exclude": ["node_modules", "dist", "./src/tests/*"]

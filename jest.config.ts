@@ -8,6 +8,7 @@ const jestConfig: JestConfigWithTsJest = {
   rootDir: "./src/tests",
   cache: false,
   clearMocks: true,
+  // transformIgnorePatterns: ['/node_modules\/(?!@bhaireshm/alorithms)(.*)']
 };
 
 export default jestConfig;
