@@ -9,7 +9,11 @@
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "types": ["./src/types/", "node", "jest"],
-    "declaration": true
+    "declaration": true,
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "baseUrl": "."
   },
   "include": ["./index.ts", "./package.json"],
   "exclude": ["node_modules", "dist", "./src/tests/*"]

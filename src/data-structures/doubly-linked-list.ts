@@ -3,7 +3,11 @@ export class DoublyLinkedListNode<T = any> {
   prev: DoublyLinkedListNode | null;
   next: DoublyLinkedListNode | null;
 
-  constructor(value: T, prev: DoublyLinkedListNode | null = null, next: DoublyLinkedListNode | null = null) {
+  constructor(
+    value: T,
+    prev: DoublyLinkedListNode | null = null,
+    next: DoublyLinkedListNode | null = null,
+  ) {
     this.value = value;
     this.prev = prev;
     this.next = next;

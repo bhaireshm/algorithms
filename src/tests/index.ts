@@ -9,4 +9,4 @@ const user: User = { name: "aklsjdnfas", age: 3 };
 const dll = new DoublyLinkedList<User>();
 dll.add(user);
 
-console.log("file: index.ts:14  dll.head?.value.name", dll.head?.value.name);
+console.log("dll.head?.value.name", dll.head?.value.name);

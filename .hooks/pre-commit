@@ -1,0 +1,36 @@
+#!/bin/sh
+
+echo "Executing 'pre-commit' hook..."
+echo
+
+IS_SRC_MODIFIED=$(git status -s src)
+
+if [ ! -z "$IS_SRC_MODIFIED" -a "$IS_SRC_MODIFIED" != " " ]; then
+  echo "Testing staged files... 🧪"
+  npm run test
+  OUT=$?
+
+  if [ $OUT -eq 0 ]; then
+    echo
+  else
+    echo "Code testing Failed."
+    echo "Fix the test and execute 'pnpm run test', add changes and try commit again."
+    false
+  fi
+
+  echo "Lint, Code formatting checks... 📃"
+
+  npx lint-staged
+  OUT=$?
+
+  if [ $OUT -eq 0 ]; then
+    echo "Formated all staged files."
+  else
+    echo "code formatting check Failed."
+    echo "Execute 'pnpm run lint-staged', add changes and try commit again."
+    false
+  fi
+
+  # Build the project using tsc
+  npm run build
+fi
